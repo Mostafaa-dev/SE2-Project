@@ -17,10 +17,6 @@ describe("detectFormat", () => {
     expect(detectFormat("src/data/book orders.json")).toBe("json");
   });
 
-  test("treats extensions that contain .xml as xml", () => {
-    expect(detectFormat("orders.xmlbackup")).toBe("xml");
-  });
-
   test("throws for an unsupported extension", () => {
     expect(() => detectFormat("orders.txt")).toThrow(
       "Unsupported file format: .txt",

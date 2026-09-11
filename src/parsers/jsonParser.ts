@@ -1,12 +1,4 @@
-export type JSONValue =
-  | string
-  | number
-  | boolean
-  | null
-  | JSONValue[]
-  | { [key: string]: JSONValue };
-
-export function parseJSON(content: string): JSONValue {
+export function parseJSON(content: string): Record<string, string>[] {
   try {
     return JSON.parse(content);
   } catch (error) {

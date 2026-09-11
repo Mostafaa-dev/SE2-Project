@@ -7,7 +7,7 @@ export function detectFormat(filePath: string): FileFormat {
 
   if (extension === ".csv") return "csv";
   if (extension === ".json") return "json";
-  if (extension.includes(".xml")) return "xml";
+  if (extension === ".xml") return "xml";
 
   throw new Error(`Unsupported file format: ${extension}`);
 }
