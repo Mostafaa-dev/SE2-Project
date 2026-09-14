@@ -1,4 +1,4 @@
-import { XMLRow } from "parsers/xmlParser";
+import { XMLRow } from "../parsers/xmlParser";
 import { ToyBuilder } from "../../model/Builders/Toy.builder";
 import { Toy } from "../../model/Toy.model";
 import { IMapper } from "./IMapper";
