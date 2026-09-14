@@ -32,7 +32,7 @@ export class OrderBuilder {
   }
 
   build(): Order {
-    if (!this.id || !this.price || !this.quantity || !this.item) {
+    if (!this.id || this.price === undefined || !this.quantity || !this.item) {
       throw new Error("Missing required fields to build Order");
     }
     return new Order(this.id, this.price, this.quantity, this.item);

@@ -5,8 +5,8 @@ export class ToyBuilder {
   private ageGroup!: string;
   private brand!: string;
   private material!: string;
-  private batteryRequired!: string;
-  private educational!: string;
+  private batteryRequired?: boolean;
+  private educational?: boolean;
 
   public static newBuilder(): ToyBuilder {
     return new ToyBuilder();
@@ -32,12 +32,12 @@ export class ToyBuilder {
     return this;
   }
 
-  setBatteryRequired(batteryRequired: string): this {
+  setBatteryRequired(batteryRequired: boolean): this {
     this.batteryRequired = batteryRequired;
     return this;
   }
 
-  setEducational(educational: string): this {
+  setEducational(educational: boolean): this {
     this.educational = educational;
     return this;
   }
@@ -48,8 +48,8 @@ export class ToyBuilder {
       !this.ageGroup ||
       !this.brand ||
       !this.material ||
-      !this.batteryRequired ||
-      !this.educational
+      this.batteryRequired === undefined ||
+      this.educational === undefined
     ) {
       throw new Error("Missing required fields to build a Toy.");
     }

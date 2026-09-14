@@ -8,8 +8,8 @@ function fullToyBuilder(): ToyBuilder {
     .setAgeGroup("13+")
     .setBrand("FunTime")
     .setMaterial("Fabric")
-    .setBatteryRequired("Yes")
-    .setEducational("Yes");
+    .setBatteryRequired(true)
+    .setEducational(true);
 }
 
 describe("Toy Builder", () => {
@@ -21,8 +21,8 @@ describe("Toy Builder", () => {
       expect(builder.setAgeGroup("13+")).toBe(builder);
       expect(builder.setBrand("FunTime")).toBe(builder);
       expect(builder.setMaterial("Fabric")).toBe(builder);
-      expect(builder.setBatteryRequired("Yes")).toBe(builder);
-      expect(builder.setEducational("Yes")).toBe(builder);
+      expect(builder.setBatteryRequired(true)).toBe(builder);
+      expect(builder.setEducational(true)).toBe(builder);
     });
   });
 
@@ -38,8 +38,8 @@ describe("Toy Builder", () => {
       expect(toy.getAgeGroup()).toBe("13+");
       expect(toy.getBrand()).toBe("FunTime");
       expect(toy.getMaterial()).toBe("Fabric");
-      expect(toy.getBatteryRequired()).toBe("Yes");
-      expect(toy.getEducational()).toBe("Yes");
+      expect(toy.getBatteryRequired()).toBe(true);
+      expect(toy.getEducational()).toBe(true);
     });
 
     it("returns the correct category for the Toy instance", () => {
@@ -56,8 +56,8 @@ describe("Toy Builder", () => {
       if (omit !== "ageGroup") builder.setAgeGroup("13+");
       if (omit !== "brand") builder.setBrand("FunTime");
       if (omit !== "material") builder.setMaterial("Fabric");
-      if (omit !== "batteryRequired") builder.setBatteryRequired("Yes");
-      if (omit !== "educational") builder.setEducational("Yes");
+      if (omit !== "batteryRequired") builder.setBatteryRequired(true);
+      if (omit !== "educational") builder.setEducational(true);
 
       return builder;
     };
@@ -88,8 +88,6 @@ describe("Toy Builder", () => {
       ["ageGroup", (b: ToyBuilder) => b.setAgeGroup("")],
       ["brand", (b: ToyBuilder) => b.setBrand("")],
       ["material", (b: ToyBuilder) => b.setMaterial("")],
-      ["batteryRequired", (b: ToyBuilder) => b.setBatteryRequired("")],
-      ["educational", (b: ToyBuilder) => b.setEducational("")],
     ])("throws when '%s' is set to an invalid value", (_field, modify) => {
       const builder = fullToyBuilder();
       modify(builder);

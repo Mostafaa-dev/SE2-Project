@@ -55,14 +55,6 @@ export class BookBuilder {
   }
 
   public build(): Book {
-    if (!this.title) console.log("Missing: title");
-    if (!this.author) console.log("Missing: author");
-    if (!this.genre) console.log("Missing: genre");
-    if (!this.format) console.log("Missing: format");
-    if (!this.language) console.log("Missing: language");
-    if (!this.publisher) console.log("Missing: publisher");
-    if (!this.specialEdition) console.log("Missing: specialEdition");
-    if (!this.packaging) console.log("Missing: packaging");
     if (
       !this.title ||
       !this.author ||

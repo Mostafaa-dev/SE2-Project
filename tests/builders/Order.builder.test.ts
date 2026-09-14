@@ -82,7 +82,6 @@ describe("OrderBuilder", () => {
   describe("build() - Invalid required values", () => {
     test.each([
       ["id", (b: OrderBuilder) => b.setId("")],
-      ["price", (b: OrderBuilder) => b.setPrice(0)],
       ["quantity", (b: OrderBuilder) => b.setQuantity(0)],
     ])("throws when %s is set to an invalid value", (_field, modify) => {
       const builder = fullOrderBuilder();
