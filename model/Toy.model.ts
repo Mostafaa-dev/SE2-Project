@@ -5,16 +5,16 @@ export class Toy implements IItem {
   private ageGroup: string;
   private brand: string;
   private material: string;
-  private batteryRequired: string;
-  private educational: string;
+  private batteryRequired: boolean;
+  private educational: boolean;
 
   constructor(
     type: string,
     ageGroup: string,
     brand: string,
     material: string,
-    batteryRequired: string,
-    educational: string,
+    batteryRequired: boolean,
+    educational: boolean,
   ) {
     this.type = type;
     this.ageGroup = ageGroup;
@@ -44,11 +44,11 @@ export class Toy implements IItem {
     return this.material;
   }
 
-  public getBatteryRequired(): string {
+  public getBatteryRequired(): boolean {
     return this.batteryRequired;
   }
 
-  public getEducational(): string {
+  public getEducational(): boolean {
     return this.educational;
   }
 }
