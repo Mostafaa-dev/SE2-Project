@@ -44,11 +44,11 @@ export class Toy implements IItem {
     return this.material;
   }
 
-  public getBatteryRequired(): boolean {
-    return this.batteryRequired;
+  public getBatteryRequired(): string {
+    return this.batteryRequired ? "Yes" : "No";
   }
 
-  public getEducational(): boolean {
-    return this.educational;
+  public getEducational(): string {
+    return this.educational ? "Yes" : "No";
   }
 }

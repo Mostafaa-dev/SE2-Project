@@ -6,8 +6,8 @@ export type XMLRow = {
   AgeGroup: string;
   Brand: string;
   Material: string;
-  BatteryRequired: string;
-  Educational: string;
+  BatteryRequired: boolean;
+  Educational: boolean;
   Price: number;
   Quantity: number;
 };
